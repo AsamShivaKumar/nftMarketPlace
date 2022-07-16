@@ -1,0 +1,52 @@
+
+.formDiv{
+    width: 92vw;
+    min-height: 96vh;
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.formDiv form{
+    position: absolute;
+    top: 0;
+    left: 46vw;
+}
+
+.textDiv{
+    color: white;
+    width: 46vw;
+    height: 96vh;
+    background: black;
+    border-radius: 5px 0 0 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.createText{
+   margin: 20vh 0 0 8vw;
+   font-size: 4rem; 
+   font-family: 'Josefin Sans',sans-serif;
+   background: -webkit-linear-gradient(#eee, #333);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.textDiv p{
+    color: grey;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 50px 0 8vw;
+    line-height: 1.7rem;
+}
+
+.divBg{
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+    width: 400px;
+    height: 800px;
+    transform: rotate(60deg) translate(45px,-270px);
+}
