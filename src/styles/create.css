@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 
 .formDiv{
     width: 92vw;
@@ -49,4 +52,69 @@
     width: 400px;
     height: 800px;
     transform: rotate(60deg) translate(45px,-270px);
+}
+
+.nftForm{
+    width: 46vw;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    border-radius: 0 5px 5px 0;
+}
+
+.nftForm *{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #2B2B2B;
+    border-radius: 2px;
+    border: 0;
+}
+
+.nftForm *::placeholder{
+    color: black;
+}
+
+.nftTitle{
+    width: 400px;
+    height: 40px;
+    padding: 0 5px;
+    color: grey;
+}
+
+.nftTitle:focus, textarea:focus{
+    outline: 0;
+    background: none;
+    border-bottom: 2px solid grey;
+}
+
+textarea{
+    resize: none;
+    width: 400px;
+    height: 60px;
+    padding: 5px 5px;
+    color: grey;
+}
+
+.fileInput{
+    cursor: pointer;
+}
+
+.createNft{
+    padding: 5px 10px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: 2px solid white;
+    font-weight: bold;
+}
+
+.createNft:hover{
+    transform: translateY(-4px);
+    color: white;
+    background-color: black;
 }

@@ -22,11 +22,11 @@ function Create(){
              <p>That's it! You own an NFT now!</p>
              <div className="divBg"></div>
           </div>
-          <form>
-            <input type="text"></input>
-            <textarea>...Description</textarea>
-            <input type="file"></input>
-            <button type="submit">Create NFT</button>
+          <form class="nftForm">
+            <input type="text" className="nftTitle" placeholder="Title..."></input>
+            <textarea classsName="descrp" placeholder="Description..."></textarea>
+            <input type="file" className="fileInput"></input>
+            <button type="submit" className="createNft">Create NFT</button>
           </form>
         </div>
       </>
