@@ -114,7 +114,11 @@ textarea{
 }
 
 .createNft:hover{
-    transform: translateY(-4px);
     color: white;
     background-color: black;
+}
+
+.createNft.clicked{
+    width: 400px;
+    height: 8px;
 }

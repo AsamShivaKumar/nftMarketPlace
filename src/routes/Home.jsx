@@ -17,7 +17,7 @@ function Home(){
         <React.Fragment>
             <Navbar current="home" />
             <div className="content">
-                <div className="container">
+                <div className="containerDiv">
                     <div className="openingText">
                         <h1>Create, explore, buy and sell incredible <p className="nft">NFTs</p></h1>
                     </div>

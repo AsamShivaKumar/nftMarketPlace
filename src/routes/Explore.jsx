@@ -14,7 +14,17 @@ function Explore(){
 
     return (
         <>
-          <Navbar current="explore"/> 
+          <Navbar current="explore"/>
+          <div className="contentDiv">
+               <h1 className="exploreTitle">Explore</h1>
+               <div className="carousel">
+                   <img src="/pics/1.gif" className= "item one"></img>
+                   <img src="/pics/2.png" className= "item two"></img>
+                   <img src="/pics/3.png" className= "item three"></img>
+                   <img src="/pics/4.png" className= "item four"></img>
+                   <img src="/pics/5.png" className= "item five"></img>
+               </div>
+          </div>      
         </>
     )
 }

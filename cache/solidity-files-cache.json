@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "D:\\Web\\nftMarketPlace\\contracts\\MarketPlace.sol": {
-      "lastModificationDate": 1657971867895,
-      "contentHash": "2161422acf79f87dcee2273551bf68e0",
+      "lastModificationDate": 1658504779662,
+      "contentHash": "67902c5ea41c169d98edf3a8ca280b34",
       "sourceName": "contracts/MarketPlace.sol",
       "solcConfig": {
         "version": "0.8.5",

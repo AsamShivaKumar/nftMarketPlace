@@ -28,7 +28,7 @@ contract MarketPlace is ERC721URIStorage{
 
     constructor() ERC721("skaMarket","SKA"){
         owner = payable(msg.sender);
-        listingPrice = 10**15;
+        listingPrice = 10**10;
     }
 
     modifier onlyOwner() {
@@ -94,8 +94,12 @@ contract MarketPlace is ERC721URIStorage{
         uint tokenCount = tokenIds.current();
         NFT[] memory tokens = new NFT[](tokenCount);
 
-        for(uint i = 1; i <= tokenCount; i++)
-            tokens[i] = nftData[i];
+        for(uint i = 0; i < tokenCount; i++){
+            uint currId = i+1;
+            NFT storage currToken = nftData[currId];
+            tokens[i] = currToken;
+        }
+            
         return tokens;
     }
 
@@ -105,10 +109,11 @@ contract MarketPlace is ERC721URIStorage{
         
         NFT[] memory listedTokens = new NFT[](listedTokenCount);
         
-        uint ind = 1;
+        uint ind = 0;
         for(uint i = 1; i <= total; i++){
-            if(nftData[i+1].currentlyListed){
-               listedTokens[ind] =  nftData[i];
+            if(nftData[i].currentlyListed){
+               NFT storage currToken = nftData[i];
+               listedTokens[ind] =  currToken;
                ind++;
             }
         }

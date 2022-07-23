@@ -22,3 +22,26 @@ root.render(
   </BrowserRouter>
   </CookiesProvider>
 );
+
+const carousel = document.getElementsByClassName("carousel");
+
+if(carousel){
+  setInterval(() => {
+    const one = document.querySelector(".one");
+    const two = document.querySelector(".two");
+    const three = document.querySelector(".three");
+    const four = document.querySelector(".four");
+    const five = document.querySelector(".five");
+    
+    one.classList.add("two");
+    one.classList.remove("one");
+    two.classList.add("three");
+    two.classList.remove("two");
+    three.classList.add("five");
+    three.classList.remove("three");
+    four.classList.add("one");
+    four.classList.remove("four");
+    five.classList.add("four");
+    five.classList.remove("five");
+  },6000)
+}
