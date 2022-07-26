@@ -5,13 +5,15 @@ import { ethers } from 'ethers';
 import "../styles/create.css";
 import Navbar from "../components/Navbar.jsx";
 import { uploadFileToIPFS, uploadJson } from '../helpers/UploadNft';
-import MarketPlace from "../MarketPlace.json";
+import abi from "../MarketPlace.json";
 
 function Create(){
     const [cookies] = useCookies();
     const navigate = useNavigate();
     const [uploading,setUploading] = useState(false);
-    const contractAddi = "0xF975c146c34972318045f7225A0D97164A4776c1";
+    const contractAddi = "0x628607e085Fe7B39Da1107accf21C307fe1f522B";
+    const contractABI = abi.abi;
+    console.log(contractABI);
 
     useEffect(() =>{
       if(cookies.walletAddress === undefined) navigate("/");
@@ -19,17 +21,18 @@ function Create(){
     
     async function uploadToContract(pinataUrl,title){
        console.log("in contract fuction");
-       const provider = new ethers.providers.Web3Provider(window.ethereum);
+       const {ethereum} = window;
+       const provider = new ethers.providers.Web3Provider(ethereum);
        const signer = provider.getSigner();
-       const contract = new ethers.Contract(contractAddi,MarketPlace.abi,signer);
+       console.log(signer);
+       const addi = await signer.getAddress();
+       console.log(addi);
+       const contract = new ethers.Contract(contractAddi,contractABI,signer);
        console.log(contract.address);
        const price = await contract.getListingPrice();
        console.log(Number(price));
-       console.log("After contract");
        let transx = await contract.createToken(pinataUrl,title);
-       console.log("Before transx");
        await transx.wait();
-       console.log(transx);
        alert("Successfully created a new token!");
     }
 
@@ -50,7 +53,7 @@ function Create(){
             const res = await uploadJson(nftData);
             console.log(res);
             
-            uploadToContract(res.pinataUrl,title);
+            await uploadToContract(res.pinataURL,title.value);
             e.target.submitButton.innerHTML = "Uploaded";
             setInterval(() => (e.target.submitButton.innerHTML = "Create NFT"),2000);
          }else{

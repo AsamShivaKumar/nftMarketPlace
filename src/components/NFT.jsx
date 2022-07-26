@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import "../styles/nft.css";
 
 function NFT(props){
-   
+
    return (
      <div className='nftTile'>
-        <img src={props.imageUrl} alt="nftImage" title="nft"></img>
+        <img className="nftImage" src={props.imageUrl} alt="nftImage" title="nft"></img>
         <div className='priceTile'>
-             <h2>{props.title}</h2>
-             <h2>{props.price}</h2>
+             <p>{props.title}</p>
+             <p>{props.price}</p>
         </div>
-        <h2>{props.descrp}</h2>
+        <h2 className='descrpHide'>{props.descrp}</h2>
      </div>
    );
 }
