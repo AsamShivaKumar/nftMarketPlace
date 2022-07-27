@@ -1,19 +1,58 @@
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import {useCookies} from 'react-cookie';
-import {Link,useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Navbar from "../components/Navbar.jsx";
 import NFT from '../components/NFT.jsx';
 import "../styles/navbar.css";
 import "../styles/explore.css";
+import { ethers } from 'ethers';
+import abi from '../MarketPlace.json';
+import axios from 'axios';
 
 function Explore(){
     const [cookies] = useCookies();
     const navigate = useNavigate();
-
+    const {ethereum} = window;
+    const contractAddi = "0x628607e085Fe7B39Da1107accf21C307fe1f522B";
+    const contractABI = abi.abi;
+    const [tokens,setTokens] = useState([]);
     useEffect(() =>{
       if(cookies.walletAddress === undefined) navigate("/");
     },[cookies]);
     
+    // fetching nfts    
+    useEffect(() =>{
+       setNfts();
+    },[]);
+    
+    async function setNfts(){
+       const res = await getNfts();
+       console.log(res);
+       setTokens(res);
+       console.log("Tokens:",tokens);
+    }
+
+    // fetching nfts
+    async function getNfts(){
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(contractAddi,contractABI,signer);
+      const nfts = await contract.getListedTokens();
+      
+      console.log(nfts);
+      const tokensArr = await Promise.all(nfts.map( async (nft) => {
+         const uri = await contract.tokenURI(nft.tokenId);
+         let metaData = await axios.get(uri);
+         metaData = metaData.data;
+         console.log(metaData);
+         
+         const token = new Token(metaData.title,metaData.imageUrl,Number(nft.price),metaData.description,nft.currOwner,0,0,nft.tokenId);
+         return token;
+      }));
+      return tokensArr;
+    }
+
+    // carousel
     useEffect(() =>{
       const carouselInt = setInterval(() => {
         const one = document.querySelector(".one");
@@ -34,18 +73,39 @@ function Explore(){
         five.classList.remove("five");
       },6000);
       
-      // clean-up function to remove the interval whebn Eplore componenet is unmounted!
+      // clean-up function to remove the interval when Explore componenet is unmounted!
       return () => ( clearInterval(carouselInt));
     },[]);
-
+    
+    // event listeners for nft divs
     useEffect(() => {
         document.querySelectorAll(".nftTile").forEach( nft => {
            nft.addEventListener("click", () => clickEvent(nft));
         });
         
-        document.querySelector(".fi-sr-cross-circle").addEventListener("click",() => ( document.querySelector(".displayDiv").style.transform = "scale(0)" ));
+        document.querySelector(".fi-sr-cross-circle").addEventListener("click",closeDiv);
 
-    },[]);
+        // return () => {
+        //   document.querySelectorAll(".nftTile").forEach( nft => ( nft.removeEventListener("click",clickEvent) ));
+        //   document.querySelector(".fi-sr-cross-circle").removeEventListener("click", closeDiv);
+        // }
+        
+    },[tokens]);
+
+    function Token(title,url,price,descrp,owner,likes,views,tokenId){
+       this.tokenId = tokenId;
+       this.title = title;
+       this.url = url;
+       this.price = price;
+       this.descrp = descrp;
+       this.owner = owner;
+       this.likes = likes;
+       this.views = views;
+    }
+    
+    function closeDiv(){
+      document.querySelector(".displayDiv").style.transform = "scale(0)"
+    }
 
     function clickEvent(nft){
       const title = nft.children[1].children[0].innerHTML;
@@ -62,6 +122,10 @@ function Explore(){
       
       div.children[1].setAttribute("src",imageURL);
       div.style.transform = "scale(1)" 
+    }
+
+    function displayToken(token){
+       return <NFT imageUrl={token.url} title={token.title} descrp={ token.descrp} price={ token.price} key = {token.tokenId}/>
     }
 
     return (
@@ -85,12 +149,13 @@ function Explore(){
                   <NFT imageUrl="/pics/5.png" title="NFT1" descrp="nft one first nft" price = "0.01 eth" />
                   <NFT imageUrl="/pics/nfts.png" title="NFT1" descrp="nft one first nft" price = "0.01 eth" />
                   <NFT imageUrl="/pics/boredApe.png" title="NFT1" descrp="nft one first nft" price = "0.01 eth" />
+                  { tokens.map(displayToken)}
                </div>
                <div className="displayDiv">
                     <i className="fi fi-sr-cross-circle"></i>
                     <img src="/pics/1.gif" className='nftImg'></img>
                     <div className='details'>
-                       <h2 className='nftTitle'>Title</h2>
+                       <h2 className='nftTitl'>Title</h2>
                        <p>Description</p>
                        <p>Currently owned by jkjnkjnkdjngkd</p>
                        <p>Current price 0.01 eth</p>

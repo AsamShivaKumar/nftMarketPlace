@@ -13,7 +13,6 @@ function Create(){
     const [uploading,setUploading] = useState(false);
     const contractAddi = "0x628607e085Fe7B39Da1107accf21C307fe1f522B";
     const contractABI = abi.abi;
-    console.log(contractABI);
 
     useEffect(() =>{
       if(cookies.walletAddress === undefined) navigate("/");

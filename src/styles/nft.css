@@ -8,6 +8,9 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     transition: all 1s;
 }
 

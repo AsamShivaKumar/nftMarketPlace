@@ -1,0 +1,63 @@
+
+.profileDiv{
+    width: 92vw;
+    height: 96vh;
+    border-radius: 5px;
+    background-color: black;
+    position: relative;
+    top: 2vh;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.userDiv{
+    display: flex;
+    width: 80vw;
+    margin: 50px 0 0 100px;
+    align-items: center;
+}
+.userAvatar{
+    border-radius: 100%;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px #2C3333;
+    position: relative;
+}
+
+.userDP{
+    width: 195px;
+}
+
+.changeAvatar{
+    position: absolute;
+    background-color: #2C3333;
+    bottom: -100px;
+    padding: 20px 55px;
+    color: grey;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.userAvatar:hover .changeAvatar{
+    bottom: -5px;
+}
+
+.userDetails{
+    margin-left: 30px;
+    color: #2C3333;
+    font-family: 'Russo One',sans-serif;
+}
+
+.name{
+    font-size: 2rem;
+}
+
+.walletAddress{
+    font-size: 1.2rem;
+}
