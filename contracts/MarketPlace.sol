@@ -13,7 +13,7 @@ contract MarketPlace is ERC721URIStorage{
     address owner;
     Counters.Counter private tokenIds;
     Counters.Counter private currentlyListed;
-    uint listingPrice;
+    uint256 listingPrice;
     mapping(uint => NFT) nftData;
     event TokenListingSuccess(uint indexed tokenId,address listedBy,uint price);
     
@@ -28,7 +28,7 @@ contract MarketPlace is ERC721URIStorage{
 
     constructor() ERC721("skaMarket","SKA"){
         owner = payable(msg.sender);
-        listingPrice = 10**10;
+        listingPrice = 10**8;
     }
 
     modifier onlyOwner() {
@@ -48,7 +48,7 @@ contract MarketPlace is ERC721URIStorage{
         return tokenIds.current();
     }
 
-    function getListingPrice() public view returns(uint){
+    function getListingPrice() public view returns(uint256){
         return listingPrice;
     }
     
@@ -111,7 +111,7 @@ contract MarketPlace is ERC721URIStorage{
         
         uint ind = 0;
         for(uint i = 1; i <= total; i++){
-            if(nftData[i].currentlyListed){
+            if(nftData[i].currentlyListed == true){
                NFT storage currToken = nftData[i];
                listedTokens[ind] =  currToken;
                ind++;
@@ -138,16 +138,16 @@ contract MarketPlace is ERC721URIStorage{
     }
     
     function getMyTokens(address user) public view returns(NFT[] memory){
-        uint tokenCount = tokenIds.current();
+        uint total = tokenIds.current();
         uint myTokens = 0;
         
-        for(uint i = 0; i < tokenCount; i++){
+        for(uint i = 1; i <= total; i++){
             if(nftData[i].currOwner == user) myTokens++;
         }
 
         NFT[] memory tokens = new NFT[](myTokens);
         uint ind = 0;
-        for(uint i = 0; i < tokenCount; i++){
+        for(uint i = 1; i <= total; i++){
             if(nftData[i].currOwner == user){
                 tokens[ind] = nftData[i];
                 ind++;
@@ -156,6 +156,8 @@ contract MarketPlace is ERC721URIStorage{
         return tokens;
     }
 
-
+    function getTokenPrice(uint tokenId) public view returns(uint){
+        return nftData[tokenId].price;
+    }
 
 }

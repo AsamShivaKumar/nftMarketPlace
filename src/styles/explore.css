@@ -192,3 +192,7 @@
     background-color: black;
     color: #7DCE13;
 }
+
+.currOwner{
+    font-size: 0.8rem !important;
+}

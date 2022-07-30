@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import "../styles/nft.css";
 
 function NFT(props){
-
+   
    return (
-     <div className='nftTile'>
+     <div className='nftTile' tokenid = {props.tokenId} >
         <img className="nftImage" src={props.imageUrl} alt="nftImage" title="nft"></img>
         <div className='priceTile'>
              <p>{props.title}</p>
              <p>{props.price}</p>
+             <p style = { {display: "none" } } >{props.owner}</p>
         </div>
         <h2 className='descrpHide'>{props.descrp}</h2>
      </div>

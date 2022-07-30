@@ -11,7 +11,7 @@ function Create(){
     const [cookies] = useCookies();
     const navigate = useNavigate();
     const [uploading,setUploading] = useState(false);
-    const contractAddi = "0x628607e085Fe7B39Da1107accf21C307fe1f522B";
+    const contractAddi = "0xB1A7AD3e2dfD8cc6Ee4C36Ece8A1E70210E1E87e"; //"0xAFB057af1188b8fB14F39001E3047Ff245BebcA5";
     const contractABI = abi.abi;
 
     useEffect(() =>{

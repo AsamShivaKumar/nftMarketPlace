@@ -13,9 +13,16 @@ const run = async() =>{
     await tokenId.wait();
     let transaction = await contract.getAllTokens();
     console.log(transaction);
-    await contract.listToken(1,hre.ethers.utils.parseEther("0.1"),{value: hre.ethers.utils.parseEther("0.0000001")});
+    const t = await contract.listToken(1,hre.ethers.utils.parseEther("0.1"),{value: liPrice});
+    await t.wait();
     transaction = await contract.getListedTokens();
+    // await transaction.wait();
     console.log(transaction);
+    transaction = await contract.getMyTokens(owner.address);
+    console.log(transaction);
+    
+    const price = await contract.getTokenPrice(1);
+    console.log("Token price",price);
 }
 
 run()
