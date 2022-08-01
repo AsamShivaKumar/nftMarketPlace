@@ -9,3 +9,4 @@ NFT Market Place built on ethereum blockchain.
 ![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
