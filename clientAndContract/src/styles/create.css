@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+}
+
+.formDiv{
+    width: 92vw;
+    min-height: 96vh;
+    position: relative;
+    top: 2vh;
+    left: 2vw;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.formDiv form{
+    position: absolute;
+    top: 0;
+    left: 46vw;
+}
+
+.textDiv{
+    color: white;
+    width: 46vw;
+    height: 96vh;
+    background: black;
+    border-radius: 5px 0 0 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.createText{
+   margin: 20vh 0 0 8vw;
+   font-size: 4rem; 
+   font-family: 'Josefin Sans',sans-serif;
+   background: -webkit-linear-gradient(#eee, #333);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.textDiv p{
+    color: grey;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 50px 0 8vw;
+    line-height: 1.7rem;
+}
+
+.divBg{
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+    width: 400px;
+    height: 800px;
+    transform: rotate(60deg) translate(45px,-270px);
+}
+
+.nftForm{
+    width: 46vw;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    border-radius: 0 5px 5px 0;
+}
+
+.nftForm *{
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #2B2B2B;
+    border-radius: 2px;
+    border: 0;
+}
+
+.nftForm *::placeholder{
+    color: black;
+}
+
+.nftTitle{
+    width: 400px;
+    height: 40px;
+    padding: 0 5px;
+    color: grey;
+}
+
+.nftTitle:focus, textarea:focus{
+    outline: 0;
+    background: none;
+    border-bottom: 2px solid grey;
+}
+
+textarea{
+    resize: none;
+    width: 400px;
+    height: 60px;
+    padding: 5px 5px;
+    color: grey;
+}
+
+.fileInput{
+    cursor: pointer;
+}
+
+.createNft{
+    padding: 5px 10px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+    border: 2px solid white;
+    font-weight: bold;
+}
+
+.createNft:hover{
+    color: white;
+    background-color: black;
+}
+
+.createNft.clicked{
+    width: 400px;
+    height: 8px;
+}

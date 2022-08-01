@@ -1,0 +1,269 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css');
+
+.profileDiv{
+    width: 92vw;
+    min-height: 96vh;
+    border-radius: 5px;
+    background-color: black;
+    position: relative;
+    top: 2vh;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.changeName{
+    width: 300px;
+    height: 100px;
+    background-color: #2B2B2B;
+    border-radius: 3px;
+    position: absolute;
+    left: calc(46vw - 150px);
+    transition: all 0.2s;
+    border: 1px solid #423F3E; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.newName{
+    background-color: #2B2B2B;
+    outline: none;
+    border: 0;
+    font-size: 1.2rem;
+    padding: 5px 5px;
+    border-bottom: 2px solid #1B1A17;
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 250px;
+}
+
+.newName::placeholder{
+    color: #1B1A17;
+}
+
+.changeBtn{
+    font-size: 1rem;
+    font-family: 'Poppins',sans-serif;
+    cursor: pointer;
+    padding: 2px 10px;
+    transition: all 0.8s;
+    border: 2px solid white;
+    border-radius: 2px;
+    color: #2B2B2B;
+}
+
+.changeBtn:hover{
+    background-color: #2B2B2B;
+    color: white;
+}
+
+.hide{
+   transform: translateY(-120px);
+}
+
+.show{
+   transform: translateY(40px);
+}
+
+.userDiv{
+    display: flex;
+    width: 80vw;
+    margin: 50px 0 0 100px;
+    align-items: center;
+}
+.userAvatar{
+    border-radius: 100%;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 2px #2C3333;
+    position: relative;
+    background-image: linear-gradient(-65deg,rgb(75, 73, 73) 50%,rgb(64, 62, 62) 50%);
+}
+
+.userDP{
+    width: 195px;
+}
+
+.changeAvatar{
+    position: absolute;
+    background-color: #2C3333;
+    bottom: -100px;
+    padding: 20px 55px;
+    color: grey;
+    cursor: pointer;
+    transition: all 0.4s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.userAvatar:hover .changeAvatar{
+    bottom: -5px;
+}
+
+.userDetails{
+    margin-left: 30px;
+    color: #2C3333;
+    font-family: 'Russo One',sans-serif;
+}
+
+.name{
+    font-size: 2rem;
+}
+
+.fi-sr-edit-alt{
+    color: #2C3333;
+    margin-left: 5px;
+}
+
+.fi-sr-edit-alt:hover{
+    color: grey;
+}
+
+.walletAddress{
+    font-size: 1.2rem;
+}
+
+.userTokens{
+    width: 92vw;
+    position: absolute;
+    left: 0vw;
+    background-color: black;
+    top: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navigation{
+  width: 500px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  color: #2C3333;
+  font-family: 'NTR', sans-serif;
+}
+
+.navigation span{
+   padding: 0;
+   cursor: pointer;
+}
+
+.active{
+    color: #424343;
+    font-weight: bold;
+    position: relative;
+}
+
+.active::after{
+    content: "";
+    display: inline-block;
+    width: 105%;
+    height: 2px;
+    position: absolute;
+    bottom: 15px;
+    left: -2.5%;
+    background-color: grey;
+}
+
+.navigation span:hover{
+    color: #424343;
+}
+
+.tokensDiv{
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.all, .listed, .unlisted{
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tokenDisplay{
+    width: 700px;
+    height: 500px;
+    background-color: #191A19;
+    /* background-color: #35858B; */
+    border-radius: 5px;
+    display: inline-block;
+    position: absolute;
+    z-index: 5;
+    top: calc(50vh - 250px);
+    left: calc(46vw - 300px);
+    position: fixed;
+    transform: scale(0);
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    border: solid 0.5px grey;
+}
+
+.btn{
+    border: solid 1px #7DCE13;
+    background-color: #7DCE13;
+    padding: 5px 15px;
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: all 1s;
+    font-family: 'Poppins',sans-serif;
+}
+
+.btn:hover{
+    background-color: black;
+    color: #7DCE13;
+}
+
+.price{
+    font-size: 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    margin-right: 50px;
+    cursor: auto;
+    border-bottom: solid 2px #2B7A0B;
+    background-color: #191A19;
+    color: rgb(105, 125, 80);
+}
+
+.price:focus{
+    background-color: white;
+}
+
+.fi-bs-hourglass-end{
+    font-size: 8rem;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100px;
+    left: calc(46vw - 64px);
+    opacity: 0.2;
+}
+
+.fi-bs-hourglass-end::after{
+    content: "No Nfts";
+    font-size: 1rem;
+    position: absolute;
+    top: 135px;
+    left: 0;
+    width: 128px;
+    text-align: center;
+    font-family: 'Russo One',sans-serif;
+    font-style: normal;
+}

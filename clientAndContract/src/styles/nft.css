@@ -1,0 +1,51 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
+
+.nftTile{
+    width: 260px;
+    /* border: white solid 1px; */
+    color: white;
+    border-radius: 5px 5px 0 0;
+    margin: 10px 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 1s;
+}
+
+.priceTile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Prompt',sans-serif;
+    color: white;
+    position: absolute;
+    background-color: #0096FF;
+    position: absolute;
+    bottom: 0;
+    width: 260px;
+    height: 30px;
+}
+
+.nftTile img{
+    width: 260px;
+    border-radius: 5px 5px 0 0;
+    transition: all 1.2s;
+}
+
+.nftTile:hover .nftImage{
+    transform: scale(1.1);
+    filter: brightness(120%);
+}
+
+.descrpHide{
+    display: none;
+}
+
+.fi-brands-ethereum{
+    color: inherit;
+    padding: 0;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,10 @@
+
+.dummyDiv{
+    border-radius: 5px;
+    width: 260px;
+    height: 300px;
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    background-image: linear-gradient(-65deg,rgb(75, 73, 73) 50%,rgb(64, 62, 62) 50%);
+}

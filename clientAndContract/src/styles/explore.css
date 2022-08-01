@@ -1,0 +1,202 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css');
+
+.contentDiv{
+    width: 92vw;
+    min-height: 192vh;
+    position: relative;
+    top: 2vh;
+    left: 2vw;
+    background-color: black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exploreTitle{
+    margin-top: 50px;
+    color: white;
+    font-size: 4.5rem;
+    font-family: 'Monoton', cursive;
+}
+
+.carousel{
+    height: 300px;
+    width: 90vw;
+    margin-top: 30px;
+    border-radius: 5px;
+    /* background-color: white; */
+    position: relative;
+}
+
+.item{
+    width: 300px;
+    transition: all 1s;
+}
+
+.one{
+    transform: scale(1.2);
+    position: absolute;
+    left: calc(45vw - 150px);
+    z-index: 3;
+}
+
+.two{
+    position: absolute;
+    left: 18vw;
+}
+
+.four{
+    position: absolute;
+    right: 18vw;
+}
+
+.three{
+    position: absolute;
+    left: 5vw;
+}
+
+.five{
+    position: absolute;
+    right: 5vw;
+}
+
+.two, .four{
+    filter: brightness(50%);
+    transform: scale(1);
+    z-index: 2;
+}
+
+.three, .five{
+    filter: brightness(30%);
+    transform: scale(0.8);
+}
+
+.fi-rr-arrow-down{
+    color: rgb(102, 99, 99);
+    font-size: 3rem;
+    margin: 60px 0 50px 0;
+    /* transition: all 0.5s; */
+    animation: arrow 3s alternate infinite;
+}
+
+.nftDiv{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80vw;
+    left: 15px;
+}
+
+@keyframes arrow{
+    0%{
+        transform: translateY(0);
+    }50%{
+        transform: translateY(5px);
+    }100%{
+        transform: translateY(-5px);
+    }
+}
+
+.displayDiv{
+    width: 700px;
+    height: 500px;
+    background-color: #191A19;
+    /* background-color: #35858B; */
+    border-radius: 5px;
+    display: inline-block;
+    position: absolute;
+    z-index: 5;
+    top: calc(50vh - 250px);
+    position: fixed;
+    transform: scale(0);
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    border: solid 0.5px grey;
+}
+
+.fi-sr-cross-circle{
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.nftImg{
+    width: 300px;
+    margin: 0 30px;
+}
+
+.details{
+    width: 300px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.nftTitl{
+    color: #9AE66E;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+.details p{
+    color: #4E9F3D;
+    font-size: 1.1rem;
+}
+
+.stats{
+    display: flex;
+    width: 300px;
+}
+
+.stats span{
+    color: #4E9F3D;
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+.stats i{
+    color: #7DCE13;
+    margin: 0;
+    padding: 0 5px 0 0;
+}
+
+.stats i:hover{
+    color: #3EC70B;
+}
+
+.fi-sr-bookmark{
+    color: #7DCE13;
+}
+
+.fi-sr-bookmark:hover{
+    color: #3EC70B;
+}
+
+.buy{
+    border: solid 1px #7DCE13;
+    background-color: #7DCE13;
+    padding: 5px 15px;
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: all 1s;
+    font-family: 'Poppins',sans-serif;
+}
+
+.buy:hover{
+    background-color: black;
+    color: #7DCE13;
+}
+
+.currOwner{
+    font-size: 0.8rem !important;
+}
+
+.liked{
+    color: #3EC70B !important;
+}
