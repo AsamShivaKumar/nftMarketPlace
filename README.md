@@ -14,3 +14,9 @@ NFT Market Place built on ethereum blockchain.
 
 ### For writing Smart Contracts - 
 ![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)
+
+> Other: hardhat.js, ethers.js, openzeppelin
+
+
+## Implementation details
+
