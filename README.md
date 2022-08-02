@@ -20,6 +20,6 @@ NFT Market Place built on ethereum blockchain.
 
 ## Implementation details
 
-ERC721 Token Standard has been used to write the smart-contract for nfts using openzeppelin.
+ERC721 Token Standard has been used to write the smart-contract for nfts using openzeppelin.  
 Here is the flow of nft token creation process - 
 ![flow](https://github.com/AsamShivaKumar/nftMarketPlace/blob/main/pics/flow.png)
