@@ -28,9 +28,9 @@ mongoDB has been used to save details about the user - (name & wallet address) a
 
 Backend API endpoints -   
 
-POST /user - *checks if a user with the given wallet address exists nad returns username if found*  
-POST /changeUserName - *changes the username with the given walletaddress*  
-POST /newToken - *creates a new token(nft)*  
-POST /token - *fetches the data(number of likes,number of views) of the token with gievn tokenId*  
-POST /increaseLikes - *increases/decreases number of likes of a token based on whether the user has liked it or not*  
-POST /increaseViews - *increases views of a token*  
+POST **/user** - *checks if a user with the given wallet address exists nad returns username if found*  
+POST **/changeUserName** - *changes the username with the given walletaddress*  
+POST **/newToken** - *creates a new token(nft)*  
+POST **/token** - *fetches the data(number of likes,number of views) of the token with gievn tokenId*  
+POST **/increaseLikes** - *increases/decreases number of likes of a token based on whether the user has liked it or not*  
+POST **/increaseViews** - *increases views of a token*  
